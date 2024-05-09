@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const DUMMY_EVENTS = [{ id: 1, name: 'Event 1' }, { id: 2, name: 'Event 2' }];
 function EventsPage () {
@@ -13,6 +13,7 @@ function EventsPage () {
           </li>
         ))}
       </ul>
+      <Outlet />
     </>
   );
 }
