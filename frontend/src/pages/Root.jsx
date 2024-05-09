@@ -5,7 +5,6 @@ import MainNavigation from '../components/MainNavigation';
 function Root () {
   return <>
     <MainNavigation />
-    <h1>Root</h1>
     <Outlet />
   </>;
 }
