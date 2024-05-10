@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-const DUMMY_EVENTS = [{ id: 1, name: 'Event 1' }, { id: 2, name: 'Event 2' }];
+const DUMMY_EVENTS = [
+  { id: 'e1', title: 'Event 1' }, { id: 'e2', title: 'Event 2' }];
 function EventsPage () {
   return (
     <>
@@ -9,7 +10,7 @@ function EventsPage () {
       <ul>
         {DUMMY_EVENTS.map((event) => (
           <li key={event.id}>
-            <Link to={`${event.id}`}>{event.name}</Link>
+            <Link to={event.id}>{event.title}</Link>
           </li>
         ))}
       </ul>
