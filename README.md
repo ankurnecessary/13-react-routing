@@ -132,9 +132,11 @@ const router = createBrowserRouter([
 
 75. `<Link to=".." relative='path'>Back</Link>` 'relative' property in `<Link>` works only for relative url in `to` attribute. It has 2 probable values `path` or `route`.
 76. [Official react router website](https://reactrouter.com/en/main/start/tutorial)
-77. [Eraser.io is an amazing tool for preparing diagrams](https://www.youtube.com/watch?v=guOcIILSsiQ)
-78. We need not to get worry about the order in which routes are defined. React router is smart enough to give required specificity to the route definitions.(react-router)
-79. An async function always returns a promise but loader functions of react-router don't return a promise even if an async function is used. Instead we will get the end result of the async function in the form of an object or string or some other value but not promise.
+77. [Eraser.io is an amazing tool for preparing diagrams like ER Diagrams](https://www.youtube.com/watch?v=guOcIILSsiQ)
+78. [A lecture to understand basics of react routing](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/35733928#questions)
+79. We need not to get worry about the order in which routes are defined. React router is smart enough to give required specificity to the route definitions.(react-router)
+80. An async function always returns a promise but loader functions of react-router don't return a promise even if an async function is used. Instead we will get the end result of the async function in the form of an object or string or some other value but not promise.
+81. You can use useLoaderData() in the element that is assigned to the route AND in all components that might be used inside that element.
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
