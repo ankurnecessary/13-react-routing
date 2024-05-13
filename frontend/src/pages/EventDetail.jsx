@@ -12,3 +12,14 @@ function EventDetailPage () {
 }
 
 export default EventDetailPage;
+
+export async function loader ({ request, params }) {
+  const eventId = params.eventId;
+  const response = await fetch(`http://localhost:8080/events/${eventId}`);
+
+  if (!response.ok) {
+    throw json({ message: 'Not able to fetch event detail. Please try again later.' }, { status: 500 });
+  } else {
+    return response;
+  }
+}
