@@ -1,10 +1,12 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 import classes from './EventForm.module.css';
 
-function EventForm({ method, event }) {
+function EventForm ({ method, event }) {
   const navigate = useNavigate();
-  function cancelHandler() {
+  function cancelHandler () {
     navigate('..');
   }
 
@@ -35,5 +37,10 @@ function EventForm({ method, event }) {
     </form>
   );
 }
+
+EventForm.propTypes = {
+  method: PropTypes.string,
+  event: PropTypes.object
+};
 
 export default EventForm;
