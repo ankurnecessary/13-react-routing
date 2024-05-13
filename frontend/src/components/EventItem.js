@@ -1,7 +1,9 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './EventItem.module.css';
 
-function EventItem({ event }) {
-  function startDeleteHandler() {
+function EventItem ({ event }) {
+  function startDeleteHandler () {
     // ...
   }
 
@@ -18,5 +20,9 @@ function EventItem({ event }) {
     </article>
   );
 }
+
+EventItem.propTypes = {
+  event: PropTypes.object
+};
 
 export default EventItem;
