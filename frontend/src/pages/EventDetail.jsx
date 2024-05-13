@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLoaderData, json } from 'react-router-dom';
+import EventItem from '../components/EventItem';
 
 function EventDetailPage () {
-  const params = useParams();
+  const data = useLoaderData();
   return (
     <>
-      <h1>Event Detail</h1>
-      <p>{params.eventId}</p>
+      <EventItem event={data.event} />
     </>
   );
 }
