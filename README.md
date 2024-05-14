@@ -140,6 +140,7 @@ const router = createBrowserRouter([
 82. We use useRouteError() hook to extract the errors thrown by the loader functions.
 83. In loader functions, we generally throw `throw new Response()` instead of `throw new Error()`. This helps in handling different kind of errors differently on error page. May be on the basis of status code of the error.
 84. Another enhancement is to use `json()` function provided by `react-router-dom` instead of `new Response()`. This is a utility which will decrease the amount of code to be written to throw errors in loader function.
+85. Like `loader()` functions we have `action()` functions which can be bound to a route to handle the form submission via that route.
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
