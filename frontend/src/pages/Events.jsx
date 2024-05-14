@@ -1,22 +1,34 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { json, useLoaderData } from 'react-router-dom';
+import EventsList from '../components/EventsList';
 
-const DUMMY_EVENTS = [
-  { id: 'e1', title: 'Event 1' }, { id: 'e2', title: 'Event 2' }];
 function EventsPage () {
+  const data = useLoaderData();
+  const events = data.events;
+
+  if (data.isError) {
+    return <p>{data.message}</p>;
+  }
+
   return (
     <>
-      <h1>Events Page</h1>
-      <ul>
-        {DUMMY_EVENTS.map((event) => (
-          <li key={event.id}>
-            <Link to={event.id}>{event.title}</Link>
-          </li>
-        ))}
-      </ul>
-      <Outlet />
+      <EventsList events={events} />
     </>
   );
 }
 
 export default EventsPage;
+
+export async function loader () {
+  const response = await fetch('http://localhost:8080/events');
+  if (!response.ok) {
+    // return {isError: true, message: 'Could not fetch events.'}
+    // throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
+    //   status: 500
+    // });
+    throw json({ message: 'Could not fetch events.' }, { status: 500 });
+  } else {
+    // React router can handle Response{} object. So, we need not to extract data via response.json()
+    return response;
+  }
+}
