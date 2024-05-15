@@ -79,8 +79,6 @@ Working with:
 71. `npm install react-router-dom` Use this command to install react-router-dom and work with react router.
 72. [A different approach of defining routes](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/35733844#questions)
 73. The paths in the children below start with '/'. This means these paths are **absolute paths** and if the domain is `http://example.com` then `{ path: '/products', element: <ProductsPage /> }` will take the control to `http://example.com/products`.
-74. Tool - [locatorjs](https://www.locatorjs.com/) along with "custom link" set to 'vscode://file/${projectPath}${filePath}:${line}:${column}' helps in locating the react components in vscode when alt + click is clicked on the components in the browser window with locatorjs extension installed.(https://github.com/microsoft/vscode/issues/197450)
-75. Youtube - react js video - https://www.youtube.com/watch?v=B91wc5dCEBA Must watch the video.
 
 ```Javascript
 const router = createBrowserRouter([
@@ -116,7 +114,7 @@ const router = createBrowserRouter([
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '',
+          index: true
           element: <HomePage />
         },
         {
@@ -143,6 +141,8 @@ const router = createBrowserRouter([
 83. In loader functions, we generally throw `throw new Response()` instead of `throw new Error()`. This helps in handling different kind of errors differently on error page. May be on the basis of status code of the error.
 84. Another enhancement is to use `json()` function provided by `react-router-dom` instead of `new Response()`. This is a utility which will decrease the amount of code to be written to throw errors in loader function.
 85. Like `loader()` functions we have `action()` functions which can be bound to a route to handle the form submission via that route.
+86. Tool - [locatorjs](https://www.locatorjs.com/) along with "custom link" set to 'vscode://file/${projectPath}${filePath}:${line}:${column}' helps in locating the react components in vscode when alt + click is clicked on the components in the browser window with locatorjs extension installed.(https://github.com/microsoft/vscode/issues/197450)
+87. Youtube - react js video - https://www.youtube.com/watch?v=B91wc5dCEBA Must watch the video.
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
