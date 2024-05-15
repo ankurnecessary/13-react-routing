@@ -163,7 +163,14 @@ function startDeleteHandler () {
 }
 ```
 
-89. 
+89. We can use react-router's `useNavigation()` hook to find the current state of the navigation or form submission.
+
+```Javascript
+  import { useNavigation } from 'react-router-dom';
+  const navigation = useNavigation();
+  // It will give you multiple states
+  const isSubmitting = navigation.state === 'submitting';
+```
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
