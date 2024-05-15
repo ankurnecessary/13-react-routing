@@ -80,6 +80,7 @@ Working with:
 72. [A different approach of defining routes](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/35733844#questions)
 73. The paths in the children below start with '/'. This means these paths are **absolute paths** and if the domain is `http://example.com` then `{ path: '/products', element: <ProductsPage /> }` will take the control to `http://example.com/products`.
 74. Tool - [locatorjs](https://www.locatorjs.com/) along with "custom link" set to 'vscode://file/${projectPath}${filePath}:${line}:${column}' helps in locating the react components in vscode when alt + click is clicked on the components in the browser window with locatorjs extension installed.(https://github.com/microsoft/vscode/issues/197450)
+75. Youtube - react js video - https://www.youtube.com/watch?v=B91wc5dCEBA Must watch the video.
 
 ```Javascript
 const router = createBrowserRouter([
