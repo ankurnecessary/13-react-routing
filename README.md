@@ -143,6 +143,27 @@ const router = createBrowserRouter([
 85. Like `loader()` functions we have `action()` functions which can be bound to a route to handle the form submission via that route.
 86. Tool - [locatorjs](https://www.locatorjs.com/) along with "custom link" set to 'vscode://file/${projectPath}${filePath}:${line}:${column}' helps in locating the react components in vscode when alt + click is clicked on the components in the browser window with locatorjs extension installed.(https://github.com/microsoft/vscode/issues/197450)
 87. Youtube - react js video - https://www.youtube.com/watch?v=B91wc5dCEBA Must watch the video.
+88. `useSubmit()` hook is used to submit a request to the router action function. It can be done in the following way.
+
+```Javascript
+import { Link, useSubmit } from 'react-router-dom';
+...
+const submit = useSubmit();
+function startDeleteHandler () {
+  const proceed = window.confirm('Are your sure?');
+  if (proceed) {
+    // we can use 'action' here if we want to use the action function of some other route.
+    // Otherwise(if action is not mentioned) it will use the action function of same route
+    // null mentioned below is so because we are not sending any data to the action function
+    // If we want to send any data then we will replace null with that data
+
+    // submit(null, { method: 'DELETE', action: '/a-different-path' });
+    submit(null, { method: 'DELETE' });
+  }
+}
+```
+
+89. 
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
